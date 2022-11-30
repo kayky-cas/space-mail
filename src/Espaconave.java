@@ -5,7 +5,7 @@ public class Espaconave {
 	private EspacoPorto localAtual;
 
 	public Espaconave(String nome) {
-
+		this.nome = nome;
 	}
 
 }
