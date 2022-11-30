@@ -1,5 +1,5 @@
 public enum TipoCombustivel {
-	NUCLEAR("núclear"),
+	NUCLEAR("nuclear"),
 	ION("íon");
 
 	private String descricao;
