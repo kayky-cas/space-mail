@@ -67,6 +67,16 @@ public class App extends JFrame {
                 };
                 int escolha = JOptionPane.showConfirmDialog(painel, fields, "Cadastrar nave", 0);
                 if (escolha == JOptionPane.YES_OPTION) {
+                    if(velocidade.getSelectedItem().equals("Subluz")){
+                        try{
+                            int porto = Integer.parseInt(codPorto.getText());
+                        }catch(NumberFormatException n){
+                            JOptionPane.showMessageDialog(painel,"Código do porto incorretamente digitado");
+                            return;
+                        }
+                        JTextField velocidadeMaximaImpulso = new JTextField();
+
+                    }
                     JOptionPane.showMessageDialog(painel, "espaçonave cadastrada!");
                 }
             }
@@ -89,6 +99,8 @@ public class App extends JFrame {
 
                 int escolha = JOptionPane.showConfirmDialog(painel, fields, "Cadastrar transportes", 2);
                 if (escolha == JOptionPane.YES_OPTION) {
+
+
                     if(transportes.getSelectedItem().equals("Pessoas")){
                         String quantidadePessoa = JOptionPane.showInputDialog(painel,"Quantidade de Pessoas","Pessoas",1);
                     }
