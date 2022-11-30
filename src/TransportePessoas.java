@@ -1,8 +1,8 @@
 public class TransportePessoas extends Transporte {
 	private int quantidadePessoas;
 
-	public TransportePessoas(EspacoPorto origem, EspacoPorto destino, EstadoTransporte estadoTransporte, int quantidadePessoas) {
-		super(origem, destino, estadoTransporte);
+	public TransportePessoas(EspacoPorto origem, EspacoPorto destino, int quantidadePessoas) {
+		super(origem, destino);
 		this.quantidadePessoas = quantidadePessoas;
 	}
 
