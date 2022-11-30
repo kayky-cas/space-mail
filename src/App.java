@@ -36,13 +36,22 @@ public class App extends JFrame {
                 JTextField coordenadaZ = new JTextField();
                 Object[] fields = {
                         "Codigo", campoNum,
-                        "Field 2", campoNome,
+                        "Nome do espaçoporto", campoNome,
                         "Coordenada X", coordenadaX,
                         "Coordenada Y", coordenadaY,
                         "Coordenada Z", coordenadaZ
                 };
                 int escolha = JOptionPane.showConfirmDialog(painel, fields, "Cadastrar nave", 0);
                 if (escolha == JOptionPane.YES_OPTION) {
+                    try{
+                        int camp = Integer.parseInt(campoNum.getText());
+                        int x = Integer.parseInt(coordenadaX.getText());
+                        int y = Integer.parseInt(coordenadaY.getText());
+                        int z = Integer .parseInt(coordenadaZ.getText());
+                    }catch(NumberFormatException n){
+                        JOptionPane.showMessageDialog(painel, "Erro na digitação das coordenadas ou no código do espaçoporto");
+                        return;
+                    }
                     JOptionPane.showMessageDialog(painel, "espaçoporto cadastrado!");
 
                 }
@@ -117,5 +126,9 @@ public class App extends JFrame {
             }
         });
 
+    }
+
+    public static void main(String[] args) {
+        App ap = new App();
     }
 }
