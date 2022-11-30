@@ -67,11 +67,11 @@ public class App extends JFrame {
                 };
                 int escolha = JOptionPane.showConfirmDialog(painel, fields, "Cadastrar nave", 0);
                 if (escolha == JOptionPane.YES_OPTION) {
-                    if(velocidade.getSelectedItem().equals("Subluz")){
-                        try{
+                    if (velocidade.getSelectedItem().equals("Subluz")) {
+                        try {
                             int porto = Integer.parseInt(codPorto.getText());
-                        }catch(NumberFormatException n){
-                            JOptionPane.showMessageDialog(painel,"Código do porto incorretamente digitado");
+                        } catch (NumberFormatException n) {
+                            JOptionPane.showMessageDialog(painel, "Código do porto incorretamente digitado");
                             return;
                         }
                         JTextField velocidadeMaximaImpulso = new JTextField();
@@ -101,10 +101,9 @@ public class App extends JFrame {
                 if (escolha == JOptionPane.YES_OPTION) {
 
 
-                    if(transportes.getSelectedItem().equals("Pessoas")){
-                        String quantidadePessoa = JOptionPane.showInputDialog(painel,"Quantidade de Pessoas","Pessoas",1);
-                    }
-                    else{
+                    if (transportes.getSelectedItem().equals("Pessoas")) {
+                        String quantidadePessoa = JOptionPane.showInputDialog(painel, "Quantidade de Pessoas", "Pessoas", 1);
+                    } else {
                         JTextField descricaoMaterial = new JTextField();
                         JTextField cargaMaterial = new JTextField();
                         Object[] materiais = {
@@ -112,7 +111,7 @@ public class App extends JFrame {
                                 "Carga Material", cargaMaterial,
 
                         };
-                        JOptionPane.showConfirmDialog(painel, materiais,"Materiais",2);
+                        JOptionPane.showConfirmDialog(painel, materiais, "Materiais", 2);
                     }
                 }
             }
