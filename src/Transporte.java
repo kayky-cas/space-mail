@@ -1,4 +1,5 @@
 public abstract class Transporte {
+	protected static final int DISTANCIA_ANOS_LUZ = 10;
 
 	private static int currentId = 0;
 
@@ -10,11 +11,14 @@ public abstract class Transporte {
 
 	private EstadoTransporte estadoTransporte;
 
+	private Espaconave espaconave;
+
 	public Transporte(EspacoPorto origem, EspacoPorto destino) {
 		identificador = currentId++;
 		estadoTransporte = EstadoTransporte.PENDENTE;
 		this.origem = origem;
 		this.destino = destino;
+		espaconave = null;
 	}
 
 	public abstract double calculaDistancia();
@@ -34,5 +38,18 @@ public abstract class Transporte {
 
 	public EstadoTransporte getEstadoTransporte() {
 		return estadoTransporte;
+	}
+
+	public EspacoPorto getOrigem() {
+		return origem;
+	}
+
+	public EspacoPorto getDestino() {
+		return destino;
+	}
+
+	public void setEspaconave(Espaconave espaconave) {
+		this.espaconave = espaconave;
+		estadoTransporte = EstadoTransporte.TRANSPORTANDO;
 	}
 }

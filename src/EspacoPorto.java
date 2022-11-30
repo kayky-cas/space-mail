@@ -23,4 +23,16 @@ public class EspacoPorto {
 	public int getNumero() {
 		return numero;
 	}
+
+	public double getCoordX() {
+		return coordX;
+	}
+
+	public double getCoordY() {
+		return coordY;
+	}
+
+	public double getCoordZ() {
+		return coordZ;
+	}
 }
