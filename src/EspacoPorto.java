@@ -1,5 +1,7 @@
 public class EspacoPorto {
 
+	private static int currentId = 0;
+
 	private int numero;
 
 	private String nome;
@@ -10,11 +12,15 @@ public class EspacoPorto {
 
 	private double coordZ;
 
-	public EspacoPorto(int numero, String nome, double coordX, double coordY, double coordZ) {
-		this.numero = numero;
+	public EspacoPorto(String nome, double coordX, double coordY, double coordZ) {
+		this.numero = currentId++;
 		this.nome = nome;
 		this.coordX = coordX;
 		this.coordY = coordY;
 		this.coordZ = coordZ;
+	}
+
+	public int getNumero() {
+		return numero;
 	}
 }

@@ -28,4 +28,11 @@ public abstract class Transporte {
 	public static void setCurrentId(int id) {
 		currentId = id;
 	}
+	public int getIdentificador() {
+		return identificador;
+	}
+
+	public EstadoTransporte getEstadoTransporte() {
+		return estadoTransporte;
+	}
 }
