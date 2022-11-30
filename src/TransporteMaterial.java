@@ -2,8 +2,8 @@ public class TransporteMaterial extends Transporte {
 	private String descricaoMaterial;
 	private double pesoCarga;
 
-	public TransporteMaterial(int identificador, EspacoPorto origem, EspacoPorto destino, EstadoTransporte estadoTransporte, String descricaoMaterial, double pesoCarga) {
-		super(identificador, origem, destino, estadoTransporte);
+	public TransporteMaterial(EspacoPorto origem, EspacoPorto destino, EstadoTransporte estadoTransporte, String descricaoMaterial, double pesoCarga) {
+		super(origem, destino, estadoTransporte);
 		this.descricaoMaterial = descricaoMaterial;
 		this.pesoCarga = pesoCarga;
 	}
