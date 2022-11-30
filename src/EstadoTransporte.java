@@ -1,2 +1,6 @@
-package PACKAGE_NAME;public enum EstadoTransporte {
+public enum EstadoTransporte {
+	PENDENTE,
+	TRANSPORTANDO,
+	CANCELADO,
+	FINALIZADO
 }
