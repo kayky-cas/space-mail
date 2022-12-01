@@ -5,16 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83dbe3eb-050c-404c-8e4a-0cdc94d69bfb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/TransporteMaterialTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TransportePessoasTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TransporteTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ACMESpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ACMESpace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DataFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EspacoPorto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EspacoPorto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Espaconave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Espaconave.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FTL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FTL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Subluz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Subluz.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Transporte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transporte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransporteMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransporteMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransportePessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportePessoas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/space-mail.iml" beforeDir="false" afterPath="$PROJECT_DIR$/space-mail.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +21,7 @@
       <list>
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -54,16 +50,23 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   }
@@ -72,18 +75,71 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.TransporteTest.getDistancia">
+    <configuration name="TransporteMaterialTest.calculaCusto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="space-mail" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransporteMaterialTest" />
+      <option name="METHOD_NAME" value="calculaCusto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransporteMaterialTest.calculaDistancia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-mail" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransporteMaterialTest" />
+      <option name="METHOD_NAME" value="calculaDistancia" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransportePessoasTest.calculaCusto" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-mail" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransportePessoasTest" />
+      <option name="METHOD_NAME" value="calculaCusto" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransportePessoasTest.calculaDistancia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-mail" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransportePessoasTest" />
+      <option name="METHOD_NAME" value="calculaDistancia" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransporteTest.getDistancia" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="space-mail" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TransporteTest" />
+      <option name="METHOD_NAME" value="getDistancia" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TransporteTest.getDistancia" />
+        <item itemvalue="JUnit.TransportePessoasTest.calculaCusto" />
+        <item itemvalue="JUnit.TransportePessoasTest.calculaDistancia" />
+        <item itemvalue="JUnit.TransporteMaterialTest.calculaCusto" />
+        <item itemvalue="JUnit.TransporteMaterialTest.calculaDistancia" />
       </list>
     </recent_temporary>
   </component>
