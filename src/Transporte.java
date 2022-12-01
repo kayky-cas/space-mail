@@ -36,6 +36,7 @@ public abstract class Transporte {
 	public static void setCurrentId(int id) {
 		currentId = id;
 	}
+
 	public int getIdentificador() {
 		return identificador;
 	}
@@ -59,5 +60,34 @@ public abstract class Transporte {
 	public void setEspaconave(Espaconave espaconave) {
 		this.espaconave = espaconave;
 		estadoTransporte = EstadoTransporte.TRANSPORTANDO;
+	}
+
+	public double getDistancia() {
+		double dX = Math.abs(getOrigem().getCoordX() - getDestino().getCoordX());
+		double dY = Math.abs(getOrigem().getCoordY() - getDestino().getCoordY());
+		double dZ = Math.abs(getOrigem().getCoordZ() - getDestino().getCoordZ());
+
+		return Math.sqrt(Math.pow(dX, 2) + Math.pow(dY, 2) + Math.pow(dZ, 2)) / Transporte.DISTANCIA_ANOS_LUZ;
+	}
+
+	@Override
+	public String toString() {
+		return String.format(
+				"""
+							Transporte nº %d:
+							\tOrigem:
+							%s
+							\tDestino:
+							%s
+							\tDistância: %.2f anos-luz
+							\tEstado de transporte: %s
+							%s\tCusto: C$ %.2f
+						""",
+				identificador,
+				origem.toString(),
+				destino.toString(),
+				getDistancia(),
+				estadoTransporte.toString(),
+				espaconave == null ? "" : "\tNave:\n" + espaconave + "\n", calculaCusto());
 	}
 }

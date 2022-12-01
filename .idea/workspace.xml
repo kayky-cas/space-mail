@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83dbe3eb-050c-404c-8e4a-0cdc94d69bfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/DataFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/space-mail.iml" beforeDir="false" afterPath="$PROJECT_DIR$/space-mail.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ACMESpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ACMESpace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DataFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DataFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EspacoPorto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EspacoPorto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Espaconave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Espaconave.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FTL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FTL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Subluz.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Subluz.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Transporte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transporte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransporteMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransporteMaterial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TransportePessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportePessoas.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +28,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FormatOnSaveOptions">
+    <option name="myRunOnSave" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -61,6 +64,7 @@
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "actions.on.save",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>

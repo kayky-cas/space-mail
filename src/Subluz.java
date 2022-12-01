@@ -9,4 +9,13 @@ public class Subluz extends Espaconave {
 		this.velocidadeImpulso = velocidadeImpulso;
 		this.tipoCombustivel = tipoCombustivel;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + String.format(
+				"""
+						\t\tVelocidade máxima: %.2f Warp
+						\t\tTipo de combustível: %s
+						""", velocidadeImpulso, tipoCombustivel.toString());
+	}
 }

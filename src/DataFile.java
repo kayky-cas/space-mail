@@ -1,15 +1,15 @@
 import java.util.List;
-import java.util.Queue;
+import java.util.List;
 
 public class DataFile {
 	private List<Transporte> transportes;
-	private Queue<Espaconave> espaconaves;
+	private List<Espaconave> espaconaves;
 	private List<EspacoPorto> portos;
 
 	private int portoCurrentId;
 	private int transporteCurrentId;
 
-	public DataFile(List<Transporte> transportes, Queue<Espaconave> espaconaves, List<EspacoPorto> portos) {
+	public DataFile(List<Transporte> transportes, List<Espaconave> espaconaves, List<EspacoPorto> portos) {
 		this.transportes = transportes;
 		this.espaconaves = espaconaves;
 		this.portos = portos;
@@ -22,7 +22,7 @@ public class DataFile {
 		return transportes;
 	}
 
-	public Queue<Espaconave> getEspaconaves() {
+	public List<Espaconave> getEspaconaves() {
 		return espaconaves;
 	}
 
