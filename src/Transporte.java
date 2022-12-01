@@ -29,6 +29,10 @@ public abstract class Transporte {
 		this.estadoTransporte = estadoTransporte;
 	}
 
+	public static int getCurrentId() {
+		return currentId;
+	}
+
 	public static void setCurrentId(int id) {
 		currentId = id;
 	}
@@ -46,6 +50,10 @@ public abstract class Transporte {
 
 	public EspacoPorto getDestino() {
 		return destino;
+	}
+
+	public Espaconave getEspaconave() {
+		return espaconave;
 	}
 
 	public void setEspaconave(Espaconave espaconave) {

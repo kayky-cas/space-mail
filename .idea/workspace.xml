@@ -5,17 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83dbe3eb-050c-404c-8e4a-0cdc94d69bfb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/JSONReader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/google_code_gson.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/DataFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.java" afterDir="false" />
-=======
+      <change beforePath="$PROJECT_DIR$/space-mail.iml" beforeDir="false" afterPath="$PROJECT_DIR$/space-mail.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ACMESpace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ACMESpace.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/EspacoPorto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EspacoPorto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Espaconave.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Espaconave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FTL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FTL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Transporte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transporte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransporteMaterial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransporteMaterial.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TransportePessoas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TransportePessoas.java" afterDir="false" />
->>>>>>> kayky.casagrande
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,25 +53,23 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "vue.rearranger.settings.migration": "true"
   }
-<<<<<<< HEAD
-}</component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <module name="space-mail" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="space-mail" />
@@ -86,9 +83,6 @@
       </list>
     </recent_temporary>
   </component>
-=======
-}]]></component>
->>>>>>> kayky.casagrande
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -99,14 +93,11 @@
       <updated>1669839252202</updated>
       <workItem from="1669839255852" duration="645000" />
       <workItem from="1669840348643" duration="177000" />
-<<<<<<< HEAD
       <workItem from="1669842243280" duration="1089000" />
       <workItem from="1669840532519" duration="2363000" />
-=======
       <workItem from="1669840532519" duration="2929000" />
       <workItem from="1669843474083" duration="753000" />
       <workItem from="1669844231926" duration="2644000" />
->>>>>>> kayky.casagrande
     </task>
     <servers />
   </component>

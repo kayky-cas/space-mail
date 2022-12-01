@@ -7,4 +7,9 @@ public class FTL extends Espaconave {
 		this.velocidadeImpulso = velocidadeImpulso;
 		this.limiteTransporte = limiteTransporte;
 	}
+
+//	@Override
+//	public String toJson() {
+//		return null;
+//	}
 }

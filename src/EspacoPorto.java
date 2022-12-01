@@ -35,4 +35,12 @@ public class EspacoPorto {
 	public double getCoordZ() {
 		return coordZ;
 	}
+
+	public static int getCurrentId() {
+		return currentId;
+	}
+
+	public static void setCurrentId(int currentId) {
+		EspacoPorto.currentId = currentId;
+	}
 }

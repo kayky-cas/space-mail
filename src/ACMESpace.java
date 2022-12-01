@@ -1,10 +1,18 @@
+import com.google.gson.Gson;
+
+import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 
 public class ACMESpace {
     List<EspacoPorto> portos = new ArrayList<>();
     Queue<Transporte> pendentes = new ArrayDeque<>();
+    Queue<Espaconave> disponiveis = new ArrayDeque<>();
     List<Transporte> transportes = new ArrayList<>();
-    List<Espaconave> naves = new ArrayList<>();
+
     public void initialize() {
         Scanner in = new Scanner(System.in);
         int opcao = 0;
@@ -14,28 +22,26 @@ public class ACMESpace {
             System.out.print("Opção: ");
             opcao = in.nextInt();
 
-            switch(opcao) {
-                case 1:
+            in.nextLine();
+            switch (opcao) {
+                case 1 -> {
                     System.out.print("Nome: ");
                     String nomePorto = in.nextLine();
                     System.out.print("Coordenadas(X, Y e Z): ");
                     int cordX = in.nextInt();
                     int cordY = in.nextInt();
                     int cordZ = in.nextInt();
-
                     EspacoPorto espacoPorto = new EspacoPorto
                             (nomePorto, cordX, cordY, cordZ);
-
                     portos.add(espacoPorto);
-                    break;
-                case 2:
+                }
+                case 2 -> {
                     System.out.print("Nome: ");
                     String nomeNave = in.nextLine();
-
                     System.out.println("1 - Criar nave Subluz");
                     System.out.println("2 - Criar nave FTL");
                     int opcaoNave = in.nextInt();
-
+                    Espaconave nave = null;
                     switch (opcaoNave) {
                         case 1 -> {
                             System.out.print("Velocidade máxima de impulso: ");
@@ -47,13 +53,13 @@ public class ACMESpace {
 
                             switch (combustivel) {
                                 case 1 -> {
-                                    Subluz subluz = new Subluz(nomeNave, velMaxImp, TipoCombustivel.NUCLEAR);
+                                    nave = new Subluz(nomeNave, velMaxImp, TipoCombustivel.NUCLEAR);
                                 }
                                 case 2 -> {
-                                    Subluz subluz = new Subluz(nomeNave, velMaxImp, TipoCombustivel.ION);
+                                    nave = new Subluz(nomeNave, velMaxImp, TipoCombustivel.ION);
                                 }
-                                default ->
-                                    System.out.println("Opção inválida, voltando ao menu anterior...");
+                                default -> System.out.println("Opção inválida, voltando ao menu anterior...");
+
                             }
                         }
                         case 2 -> {
@@ -62,11 +68,14 @@ public class ACMESpace {
                             System.out.print("Carga limite: ");
                             int cargaLimite = in.nextInt();
 
-                            FTL ftl = new FTL(nomeNave, velMaxWarp, cargaLimite);
+                            nave = new FTL(nomeNave, velMaxWarp, cargaLimite);
                         }
                     }
-                    break;
-                case 3:
+                    if (nave != null) {
+                        disponiveis.add(nave);
+                    }
+                }
+                case 3 -> {
                     System.out.print("Código espaço-porto origem: ");
                     int codOrigem = in.nextInt();
                     System.out.print("Código espaço-porto destino: ");
@@ -74,24 +83,20 @@ public class ACMESpace {
                     System.out.println("1 - Transporte de pessoas");
                     System.out.println("2 - Transporte de materiais");
                     int opcaoTransporte = in.nextInt();
-
                     EspacoPorto origem = null;
                     EspacoPorto destino = null;
-
-                    for(EspacoPorto porto : portos) {
-                        if(porto.getNumero() == codOrigem) {
+                    for (EspacoPorto porto : portos) {
+                        if (porto.getNumero() == codOrigem) {
                             origem = porto;
                         }
-                        if(porto.getNumero() == codDestino) {
+                        if (porto.getNumero() == codDestino) {
                             destino = porto;
                         }
                     }
-
-                    if(origem == null || destino == null) {
+                    if (origem == null || destino == null) {
                         System.out.println("Porto de origem ou de destino não encontrado...");
                         break;
                     }
-
                     switch (opcaoTransporte) {
                         case 1 -> {
                             System.out.print("Quantidade de pessoas: ");
@@ -114,33 +119,27 @@ public class ACMESpace {
                             transportes.add(transporteMaterial);
                         }
                     }
-                    break;
-                case 4:
-                    if(transportes.isEmpty()) break;
-
-                    for(Transporte transporte : transportes) {
+                }
+                case 4 -> {
+                    if (transportes.isEmpty()) break;
+                    for (Transporte transporte : transportes) {
                         System.out.println(transporte);
                     }
-                    break;
-                case 5:
+                }
+                case 5 -> {
                     Transporte transporteConsulta = null;
-
                     System.out.print("Código do transporte: ");
                     int codTransporte = in.nextInt();
-
-                    for(Transporte transporte : transportes) {
-                        if(transporte.getIdentificador() == codTransporte)
+                    for (Transporte transporte : transportes) {
+                        if (transporte.getIdentificador() == codTransporte)
                             transporteConsulta = transporte;
                     }
-
-                    if(transporteConsulta == null) break;
-
-                    if(transporteConsulta.getEstadoTransporte() == EstadoTransporte.FINALIZADO
+                    if (transporteConsulta == null) break;
+                    if (transporteConsulta.getEstadoTransporte() == EstadoTransporte.FINALIZADO
                             || transporteConsulta.getEstadoTransporte() == EstadoTransporte.CANCELADO) {
                         System.out.println("Estado do transporte indisponível para mudança...");
                         break;
                     }
-
                     System.out.println("Qual estado deseja atribuir ao transporte:");
                     System.out.println("1 - Pendente");
                     System.out.println("2 - Transportando");
@@ -148,26 +147,84 @@ public class ACMESpace {
                     System.out.println("4 - Finalizado");
                     System.out.print("Opção: ");
                     int opcaoEstado = in.nextInt();
-
-                    if(opcaoEstado < 1 || opcaoEstado > 4) {
-                        System.out.printf("Opção inválida...");
+                    if (opcaoEstado < 1 || opcaoEstado > 4) {
+                        System.out.println("Opção inválida...");
                         break;
                     }
-                    transporteConsulta.setEstadoTransporte(EstadoTransporte.values()[opcaoEstado - 1]);
-                    break;
-                case 6:
-                    break;
-                case 7:
+                    EstadoTransporte estadoTransporte = EstadoTransporte.values()[opcaoEstado - 1];
+                    if (estadoTransporte == EstadoTransporte.TRANSPORTANDO) {
+                        if (transporteConsulta.getEspaconave() == null) {
+                            try {
+                                Espaconave espaconave = disponiveis.remove();
 
-                    break;
-                case 8:
-                    break;
-                case 0:
-                    System.out.println("Volte sempre!");
-                    break;
-                default:
-                    System.out.println("Opção inválida.");
-                    break;
+                                transporteConsulta.setEspaconave(espaconave);
+
+                            } catch (NoSuchElementException e) {
+                                System.out.println("Nenhuma nave disponível!");
+                                break;
+                            }
+                        }
+                    } else {
+                        disponiveis.add(transporteConsulta.getEspaconave());
+                        transporteConsulta.setEspaconave(null);
+                    }
+                    transporteConsulta.setEstadoTransporte(estadoTransporte);
+                }
+                case 6 ->
+                    //TODO
+                        System.out.println("Funcionabilidade indisponível no momento...");
+                case 7 -> {
+                    try {
+                        Espaconave espaconave = disponiveis.remove();
+                        Transporte transporte = pendentes.remove();
+
+                        transporte.setEspaconave(espaconave);
+
+                    } catch (NoSuchElementException e) {
+                        System.out.println("Nenhuma nave disponível, ou transporte pendente!");
+                    }
+                }
+                case 8 -> {
+                    System.out.println("Nome do arquivo (sem extensão) no qual deseja salvar os dados: ");
+                    String arquivo = in.nextLine();
+
+                    DataFile dataFile = new DataFile(transportes, disponiveis, portos);
+
+                    String json = new Gson().toJson(dataFile);
+
+                    Path path = Paths.get(arquivo + ".json");
+                    try (PrintWriter writer = new PrintWriter(Files.newBufferedWriter(path, Charset.defaultCharset()))) {
+                        writer.println(json);
+                    } catch (IOException e) {
+                        System.out.println("Não foi possível salvar nesse arquivo!");
+                    }
+                }
+                case 9 -> {
+                    System.out.println("Nome do arquivo (sem extensão) no qual deseja carregar os dados: ");
+                    String arquivo1 = in.nextLine();
+                    DataFile dataFile1;
+                    Path path1 = Paths.get(arquivo1 + ".json");
+                    try (BufferedReader reader = Files.newBufferedReader(path1,
+                            Charset.defaultCharset())) {
+                        dataFile1 = new Gson().fromJson(reader.readLine(), DataFile.class);
+
+                        dataFile1.correctIds();
+
+                        transportes = dataFile1.getTransportes();
+                        pendentes.clear();
+
+                        transportes.stream()
+                                .filter(t -> t.getEstadoTransporte() == EstadoTransporte.PENDENTE)
+                                .forEach(pendentes::add);
+
+                        disponiveis = dataFile1.getEspaconaves();
+                        portos = dataFile1.getPortos();
+                    } catch (IOException e) {
+                        System.err.format("Não foi possivel ler o arquivo por: %s\n", e);
+                    }
+                }
+                case 0 -> System.out.println("Volte sempre!");
+                default -> System.out.println("Opção inválida.");
             }
         } while(opcao != 0);
     }
@@ -177,11 +234,12 @@ public class ACMESpace {
         System.out.println("1 - Cadastrar espaço-porto");
         System.out.println("2 - Cadastrar espaçonave");
         System.out.println("3 - Cadastrar transporte");
-        System.out.println("4 - Alterar estado de transporte");
-        System.out.println("5 - Carregar dados iniciais");
-        System.out.println("6 - Designar transportes");
-        System.out.println("7 - Salvar dados");
-        System.out.println("8 - Carregar dados");
+        System.out.println("4 - Consulta todos transportes");
+        System.out.println("5 - Alterar estado de transporte");
+        System.out.println("6 - Carregar dados iniciais");
+        System.out.println("7 - Designar transportes");
+        System.out.println("8 - Salvar dados");
+        System.out.println("9 - Carregar dados");
         System.out.println("0 - Finalizar sistema");
         System.out.println("================================");
     }
